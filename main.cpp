@@ -7,6 +7,11 @@ using namespace std; // efficiency, removes typing in std:: each time
 // creating the book class
 class Book {
 
+    private: // attributes are set to private, preventing users from randomly changing them
+    string title; // book title attribute
+    string author; // author attribute
+    int ISBN; // ISBN attribute
+    bool isAvailable; // ability for the book to be available
 };
 
 // creating the user class

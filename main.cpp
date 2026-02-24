@@ -23,11 +23,19 @@ class Book {
     }
 
 // getting the private info to be displayed
-    string getTitle() { return t; }
-
+    string getTitle() { return title; } // gets the book title
+    string getAuthor() { return author; } // gets the author
+    int getISBN() { return ISBN; } // gets the ISBN
+    bool getAvailability() { return isAvailable; } // gets the availability
 
 // creating the displaying of the books
-    
+    void showBookInfo() { // method that display book information
+        cout << "Book title: "<< title << " /n" // displays the title
+        << "Book author: " << author << " /n" // displays the author
+        << "ISBN: " << ISBN << " /n" // displays the ISBN
+        << "Available?: " << isAvailable << " /n" // displays the availability (yes/no)
+        << endl; // ends the display
+    }
 
 // methods
 // borrowing books

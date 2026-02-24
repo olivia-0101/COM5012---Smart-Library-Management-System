@@ -15,14 +15,19 @@ class Book {
 
 // creating the constructor - template for the book
     public: // others can access this information
-    Book(string t, string a, int i) { // essentially placenames for the book attributes
+    Book(string t, string a, int i) { // placenames for the book values to be passed through
         title = t; // assigning values
         author = a;
         ISBN = i;
         isAvailable = true; // books are available by default unless this is changed by another user
     }
 
+// getting the private info to be displayed
+    string getTitle() { return t; }
+
+
 // creating the displaying of the books
+    
 
 // methods
 // borrowing books

@@ -8,24 +8,37 @@ using namespace std; // efficiency, removes typing in std:: each time
 class Book {
 // creating its attributes
     private: // attributes are set to private, preventing users from randomly changing them
-    string title; // book title attribute
-    string author; // author attribute
-    int ISBN; // ISBN attribute
+    string title; // book title 
+    string author; // author 
+    int ISBN; // ISBN 
     bool isAvailable; // book's availability status
 
 // creating the constructor - template for the book
-    public:
-    Book(string t, string a, int i) {
-        title = t;
+    public: // others can access this information
+    Book(string t, string a, int i) { // essentially placenames for the book attributes
+        title = t; // assigning values
         author = a;
         ISBN = i;
         isAvailable = true; // books are available by default unless this is changed by another user
     }
 
+// creating the displaying of the books
+
+// methods
+// borrowing books
+
+// returning books
+
 };
 
 // creating the user class
 class User {
+// creating its attributes
+    protected: // attributes are set to protected, preventing users from outside the main superclass and subclasses from randomly changing them
+    int UserID; // user ID
+    string name; // user name
+    string email; // user email
+    string password; // user password
 
 };
 

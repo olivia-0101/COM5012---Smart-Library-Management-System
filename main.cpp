@@ -11,6 +11,7 @@ class Book {
     string title; // book title 
     string author; // author 
     int ISBN; // ISBN 
+    int dueDate; // date
     bool isAvailable; // book's availability status
 
 // creating the constructor - template for the book
@@ -30,17 +31,34 @@ class Book {
 
 // creating the displaying of the books
     void showBookInfo() { // method that display book information
-        cout << "Book title: "<< title << " /n" // displays the title
-        << "Book author: " << author << " /n" // displays the author
+        cout << "Book title: "<< title << " \n" // displays the title
+        << "Book author: " << author << " \n" // displays the author
         << "ISBN: " << ISBN << " /n" // displays the ISBN
-        << "Available?: " << isAvailable << " /n" // displays the availability (yes/no)
+        << "Available?: " << isAvailable << " \n" // displays the availability (yes/no)
         << endl; // ends the display
     }
 
 // methods
+
 // borrowing books
+    bool borrowBook() { // this method is a boolean because it can either succeed or fail
+        if (isAvailable) {
+            isAvailable = false; // availability turns to false because someone has borrowed the book
+            return true; // means the borrowing succeeded
+        } else {
+            return false; // means the borrowing has not succeeded
+        }
+    }
 
 // returning books
+    bool returnBook() { // is going to look like the opposite of the borrow function
+        if (!isAvailable) { // means if the book isn't available (borrowed)
+            isAvailable = true; // availability is true because nobody is borrowing it anymore after the returning method
+            return true; // means the returning has succeeded
+        } else {
+            return false; // means the returning has not succeeded
+        }
+    }
 
 };
 

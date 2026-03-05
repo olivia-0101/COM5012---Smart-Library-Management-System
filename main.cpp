@@ -90,7 +90,24 @@ class Administrator {
 
 // creating the library system class
 class LibrarySystem {
+// creating its attributes
+    private: // can't be accessed by anyone else, prevents the system from breaking
+        vector<Book> books;
 
+    public: // can be accessed by other classes
+        
+        void addBook (Book b) // adding the object for the Book - b - which the function receives
+        {
+            books.push_back(b); // adds a new book to the end of the vector list, AKA adds a new book to the library
+        }
+
+        void showAllBooks ()
+        {
+            for(int i = 0; i < books.size(); i++) // start at the first book then move one by one through them
+            {
+                books[i].showBookInfo(); // asking the book at position i to show its information, so each book shows its information
+            }
+        }
 };
 
 

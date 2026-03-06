@@ -98,6 +98,22 @@ class LibraryMember {
         borrowedBooks.push_back(book); // adds that book to end of the vector list
     }
 
+// borrowing books
+    bool borrowBook(Book* book) { // allows the library member to access the borrowBook method in the Book class and borrow books
+
+        if (!canBorrow()) { // if they don't pass the 5 book rule
+            cout << "Unable to borrow more than 5 books at a time." << endl; // will show a message stating that the library member cannot borrow more than 5 books at a time
+            return false; // if this is the case it won't run the borrowing
+        }
+
+        if (book->borrowBook()) { // asking the Book object to run its function, the -> is because the book object is a pointer
+            addBorrowedBook(book); // adding the book to end of the member's list
+            return true; // means it worked
+        }
+
+            return false;
+    }
+
 };
 
 

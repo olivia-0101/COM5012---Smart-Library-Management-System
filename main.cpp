@@ -91,9 +91,12 @@ class LibraryMember {
 
 // implementing the 5 book only policy
     bool canBorrow() { // boolean allows borrowing up to a certain number
-        return borrowedBooks.size < 5; // allows borrowing if a user has under 5 books, else doesn't allow more borrowing
+        return borrowedBooks.size() < 5; // allows borrowing if a user has under 5 books, else doesn't allow more borrowing
     }
 
+    void addBorrowedBook(Book* book) { // function that adds a borrowed book to the member's borrowedBooks list after they've borrowed a book; adds a pointer to that book into the borrowedBooks vector
+        borrowedBooks.push_back(book); // adds that book to end of the vector list
+    }
 
 };
 

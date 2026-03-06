@@ -75,7 +75,11 @@ class User {
 
 // creating the library member class
 class LibraryMember {
+    private: // has private attributes
+    int UserID; // user ID
+    string name; // member's name
 
+    vector<Book*> borrowedBooks; // a list of pointers to books the member has borrowed
 };
 
 // creating the librarian class
@@ -92,7 +96,7 @@ class Administrator {
 class LibrarySystem {
 // creating its attributes
     private: // can't be accessed by anyone else, prevents the system from breaking
-        vector<Book> books; // the library stores many books
+        vector<Book*> books; // the library stores many books
 
     public: // can be accessed by other classes
         

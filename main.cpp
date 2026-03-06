@@ -14,7 +14,7 @@ class Book {
     int dueDate; // date
     bool isAvailable; // book's availability status
 
-// creating the constructor - template for the book
+// creating the constructor - template for the book so we can have many different book objects
     public: // others can access this information
     Book(string t, string a, int i) { // placenames for the book values to be passed through
         title = t; // assigning values
@@ -73,6 +73,7 @@ class User {
 
 };
 
+
 // creating the library member class
 class LibraryMember {
     private: // has private attributes
@@ -80,7 +81,22 @@ class LibraryMember {
     string name; // member's name
 
     vector<Book*> borrowedBooks; // a list of pointers to books the member has borrowed
+
+// creating the constructor - template for the library member so we can have many different library members
+    public: // others can access this information
+    LibraryMember(int id, string n) {
+        UserID = id;
+        name = n;
+    }
+
+// implementing the 5 book only policy
+    bool canBorrow() { // boolean allows borrowing up to a certain number
+        return borrowedBooks.size < 5; // allows borrowing if a user has under 5 books, else doesn't allow more borrowing
+    }
+
+
 };
+
 
 // creating the librarian class
 class Librarian {

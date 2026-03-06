@@ -33,7 +33,7 @@ class Book {
     void showBookInfo() { // method that display book information
         cout << "Book title: "<< title << " \n" // displays the title
         << "Book author: " << author << " \n" // displays the author
-        << "ISBN: " << ISBN << " /n" // displays the ISBN
+        << "ISBN: " << ISBN << " \n" // displays the ISBN
         << "Available?: " << isAvailable << " \n" // displays the availability (yes/no)
         << endl; // ends the display
     }
@@ -92,7 +92,7 @@ class Administrator {
 class LibrarySystem {
 // creating its attributes
     private: // can't be accessed by anyone else, prevents the system from breaking
-        vector<Book> books;
+        vector<Book> books; // the library stores many books
 
     public: // can be accessed by other classes
         

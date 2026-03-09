@@ -76,7 +76,7 @@ class User {
 
 // creating the library member class
 class LibraryMember {
-    private: // has private attributes
+ private: // has private attributes
     int UserID; // user ID
     string name; // member's name
 
@@ -87,7 +87,7 @@ class LibraryMember {
     LibraryMember(int id, string n) {
         UserID = id;
         name = n;
-    }
+}
 
 // implementing the 5 book only policy
     bool canBorrow() { // boolean allows borrowing up to a certain number
@@ -114,6 +114,22 @@ class LibraryMember {
             return false;
     }
 
+// returning books
+    bool returnBook(Book* book) {
+
+        if (book->returnBook()) { // getting the book to mark itself as returned, AKA available again
+            for (int i = 0; i < borrowedBooks.size(); i++) { // looking through the library member's list of books
+                if (borrowedBooks[i] == book) { // checking if the book in the list is the same as the current book being returned 
+                    borrowedBooks.erase(borrowedBooks.begin() + i); // this will then remove it from the vector
+                    break; // stop searching when we've found it
+            }
+        }
+
+        return true; // means the return process has succeeded
+    }
+
+    return false; // means the return process has failed
+
 };
 
 
@@ -135,7 +151,7 @@ class LibrarySystem {
 
     public: // can be accessed by other classes
         
-        void addBook (Book b) // adding the object for the Book - b - which the function receives
+        void addBook (Book* b) // adding the object for the Book - b - which the function receives, via a pointer
         {
             books.push_back(b); // adds a new book to the end of the vector list, AKA adds a new book to the library
         }
@@ -144,7 +160,7 @@ class LibrarySystem {
         {
             for(int i = 0; i < books.size(); i++) // start at the first book then move one by one through them
             {
-                books[i].showBookInfo(); // asking the book at position i to show its information, so each book shows its information
+                books[i]->showBookInfo(); // asking the book at position i to show its information, so each book shows its information
             }
         }
 };
